@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HW 1</title>
+  </head>
+  <body>
+    <h2>Task 1: Make Transaction</h2>
+    <input type="number" id="quantity" placeholder="Quantity" />
+    <input type="number" id="pricePerDroid" placeholder="Price per Droid" />
+    <button onclick="handleTransaction()">Make Transaction</button>
+    <p id="transactionResult"></p>
+
+    <h2>Task 2: Get Shipping Message</h2>
+    <input type="text" id="country" placeholder="Country" />
+    <input type="number" id="price" placeholder="Price" />
+    <input type="number" id="deliveryFee" placeholder="Delivery Fee" />
+    <button onclick="handleShippingMessage()">Get Shipping Message</button>
+    <p id="shippingResult"></p>
+
+    <h2>Task 3: Get Element Width</h2>
+    <input
+      type="text"
+      pattern="\d+(\.\d+)?px"
+      required
+      id="contentWidth"
+      placeholder="Content Width"
+    />
+    <input
+      type="text"
+      pattern="\d+(\.\d+)?px"
+      required
+      id="padding"
+      placeholder="Padding"
+    />
+    <input
+      type="text"
+      pattern="\d+(\.\d+)?px"
+      required
+      id="border"
+      placeholder="Border"
+    />
+    <button onclick="handleElementWidth()">Get Element Width</button>
+    <p id="elementWidthResult"></p>
+
+    <style>
+      input:invalid {
+        border: 1px solid red;
+      }
+    </style>
+
+    <script src="js/task-1.js"></script>
+    <script src="js/task-2.js"></script>
+    <script src="js/task-3.js"></script>
+    <script>
+      function handleTransaction() {
+        const quantity = document.getElementById("quantity").value;
+        const pricePerDroid = document.getElementById("pricePerDroid").value;
+        const result = makeTransaction(quantity, pricePerDroid);
+        document.getElementById("transactionResult").innerText = result;
+      }
+
+      function handleShippingMessage() {
+        const country = document.getElementById("country").value;
+        const price = parseFloat(document.getElementById("price").value);
+        const deliveryFee = parseFloat(
+          document.getElementById("deliveryFee").value,
+        );
+        const result = getShippingMessage(country, price, deliveryFee);
+        document.getElementById("shippingResult").innerText = result;
+      }
+
+      function handleElementWidth() {
+        const content = document.getElementById("contentWidth").value;
+        const padding = document.getElementById("padding").value;
+        const border = document.getElementById("border").value;
+        const result = getElementWidth(content, padding, border);
+        document.getElementById("elementWidthResult").innerText =
+          `Element width is ${result}`;
+      }
+    </script>
+  </body>
+</html>
