@@ -48,18 +48,22 @@
       }
     </style>
 
-    <script src="js/task-1.js"></script>
-    <script src="js/task-2.js"></script>
-    <script src="js/task-3.js"></script>
-    <script>
-      function handleTransaction() {
+    <script src="js/task-1.js" type="module"></script>
+    <script src="js/task-2.js" type="module"></script>
+    <script src="js/task-3.js" type="module"></script>
+    <script type="module">
+      import { makeTransaction } from "./js/task-1.js";
+      import { getShippingMessage } from "./js/task-2.js";
+      import { getElementWidth } from "./js/task-3.js";
+
+      window.handleTransaction = function () {
         const quantity = document.getElementById("quantity").value;
         const pricePerDroid = document.getElementById("pricePerDroid").value;
         const result = makeTransaction(quantity, pricePerDroid);
         document.getElementById("transactionResult").innerText = result;
-      }
+      };
 
-      function handleShippingMessage() {
+      window.handleShippingMessage = function () {
         const country = document.getElementById("country").value;
         const price = parseFloat(document.getElementById("price").value);
         const deliveryFee = parseFloat(
@@ -67,16 +71,16 @@
         );
         const result = getShippingMessage(country, price, deliveryFee);
         document.getElementById("shippingResult").innerText = result;
-      }
+      };
 
-      function handleElementWidth() {
+      window.handleElementWidth = function () {
         const content = document.getElementById("contentWidth").value;
         const padding = document.getElementById("padding").value;
         const border = document.getElementById("border").value;
         const result = getElementWidth(content, padding, border);
         document.getElementById("elementWidthResult").innerText =
           `Element width is ${result}`;
-      }
+      };
     </script>
   </body>
 </html>

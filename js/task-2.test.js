@@ -1,6 +1,6 @@
 "use strict";
 
-const { getShippingMessage } = require("./task-2");
+import { getShippingMessage } from "./task-2";
 
 describe("getShippingMessage", () => {
   const cases = [

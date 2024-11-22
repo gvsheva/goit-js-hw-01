@@ -8,4 +8,4 @@ function getElementWidth(content, padding, border) {
   return c + 2 * p + 2 * b;
 }
 
-module.exports = { getElementWidth };
+export { getElementWidth };

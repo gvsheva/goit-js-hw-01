@@ -1,6 +1,6 @@
 "use strict";
 
-const { getElementWidth } = require("./task-3");
+import { getElementWidth } from "./task-3";
 
 describe("getElementWidth", () => {
   const cases = [

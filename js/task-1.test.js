@@ -1,6 +1,6 @@
 "use strict";
 
-const { makeTransaction } = require("./task-1");
+import { makeTransaction } from "./task-1";
 
 describe("makeTransaction", () => {
   const cases = [
